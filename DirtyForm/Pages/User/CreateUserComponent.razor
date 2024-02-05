@@ -1,0 +1,60 @@
+﻿@page "/create-user"
+
+@inherits CreateUserComponentBase
+
+
+<div class="col-md-12">
+    <EditForm Model="@UserViewModel" OnValidSubmit="@FormSubmitted">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Add</h5>
+            </div>
+            <div class="card-body">
+
+                <DataAnnotationsValidator />
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="FirstName">First Name: </label>
+                        <InputText id="FirstName" class="form-control" @bind-Value="@UserViewModel.FirstName" placeholder="Enter First name"></InputText>
+                        <ValidationMessage class="text-danger" For="@(() => UserViewModel.FirstName)" />
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="MiddleName">Middle Name: </label>
+                        <InputText id="MiddleName" class="form-control" @bind-Value="@UserViewModel.MiddleName" placeholder="Enter Middle name"></InputText>
+                        <ValidationMessage class="text-danger" For="@(() => UserViewModel.MiddleName)" />
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="LastName">Last Name: </label>
+                        <InputText id="LastName" class="form-control" @bind-Value="@UserViewModel.LastName" placeholder="Enter Last name"></InputText>
+                        <ValidationMessage class="text-danger" For="@(() => UserViewModel.LastName)" />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="Address">Address: </label>
+                        <InputTextArea id="Address" class="form-control" @bind-Value="@UserViewModel.Address" placeholder="Enter Address"></InputTextArea>
+                        <ValidationMessage class="text-danger" For="@(() => UserViewModel.Address)" />
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="Address">EmailId: </label>
+                        <InputText id="EmailId" class="form-control" @bind-Value="@UserViewModel.EmailId" placeholder="Enter EmailId"></InputText>
+                        <ValidationMessage class="text-danger" For="@(() => UserViewModel.EmailId)" />
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="Address">MobileNo: </label>
+                        <InputText id="MobileNo" class="form-control" @bind-Value="@UserViewModel.MobileNo" maxlength="10" placeholder="Enter MobileNo"></InputText>
+                        <ValidationMessage class="text-danger" For="@(() => UserViewModel.MobileNo)" />
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button type="submit" id="btnsubmit" class="btn btn-success">Submit</button>
+                <a class="btn btn-danger" href="">Clear</a>
+                <a class="btn btn-primary" href="/UserGrid">List</a>
+            </div>
+        </div>
+    </EditForm>
+</div>
+
+
