@@ -11,4 +11,10 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.24" PrivateAssets="all" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Blazr.Core\" />
+    <Folder Include="Blazr.NavigationLocker\" />
+    <Folder Include="Blazr.Ui\" />
+  </ItemGroup>
+
 </Project>
